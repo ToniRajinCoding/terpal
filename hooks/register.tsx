@@ -58,7 +58,8 @@ const ROBOT: Record<Mood, string> = {
 function picture(sk: Skin, m: Mood): { lines: string[]; accAt: number } {
   if (sk === 'cat') return { lines: [CAT[m]], accAt: 0 }
   if (sk === 'tiny') return { lines: [' /\\_/\\', `( ${TINY_EYES[m]} )`], accAt: 1 }
-  return { lines: [ROBOT[m], '/|_|\\'], accAt: 0 }
+  // shipped: arms are raised around the face, so the body has no hands
+  return { lines: [ROBOT[m], m === 'shipped' ? '  |_|' : '/|_|\\'], accAt: 0 }
 }
 
 // widest picture line of a skin, so the speech beside it never shifts
