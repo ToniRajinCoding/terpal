@@ -7,6 +7,8 @@ A tiny pet that lives above your Claude Code prompt and reacts to what you and C
 /|_|\
 ```
 
+See [INSTALL.md](INSTALL.md) for the full setup guide, including a prompt you can paste into Claude Code.
+
 ## Install
 
 In a Claude Code session, type:
