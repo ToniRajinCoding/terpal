@@ -1,0 +1,5 @@
+{
+  "name": "terpal",
+  "owner": { "name": "Terpal" },
+  "plugins": [{ "name": "codepet", "source": "./" }]
+}

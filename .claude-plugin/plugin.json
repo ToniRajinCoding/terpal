@@ -1,0 +1,6 @@
+{
+  "name": "codepet",
+  "version": "0.1.0",
+  "description": "A tiny terminal pal that lives above your Claude Code prompt and reacts to what you and Claude do.",
+  "types": "./types/index.d.ts"
+}
