@@ -1,77 +1,130 @@
-# Terpal (terminal pal)
+# Terpal
 
-A tiny pet that lives above your Claude Code prompt and reacts to what you and Claude are doing.
+A tiny pal for your terminal. It sits above your Claude Code prompt, watches you work, and has opinions.
 
 ```
 [o_o]    what shall we build?
 /|_|\
 ```
 
-See [INSTALL.md](INSTALL.md) for the full setup guide, including a prompt you can paste into Claude Code.
+It does not write code. It does not fix bugs. It just reacts to the person who does, which is you, and to Claude, who does the actual work.
 
-## Install
+---
 
-In a Claude Code session, type:
+## Get it
+
+The easy way: open `claude` and paste this.
+
+> Install the Claude Code plugin "codepet" from the GitHub marketplace ToniRajinCoding/terpal at user scope. Run `claude plugin marketplace add ToniRajinCoding/terpal` and then `claude plugin install codepet@terpal`. Then tell me to start a new Claude Code session. Don't change any other settings.
+
+Yes, you are asking Claude to install a pet for Claude. Welcome to the future.
+
+<details>
+<summary>Prefer to type it yourself?</summary>
+
+Inside Claude Code:
 
 ```
 /plugin install codepet --marketplace ToniRajinCoding/terpal
 ```
 
-Answer `y` to add the marketplace, then choose the **user** scope (so the pet shows up in every session). The pet appears right away.
+Say `y` to add the marketplace, then pick **user** scope.
 
-From a normal shell instead:
+Or from a normal terminal:
 
 ```
 claude plugin install codepet --marketplace ToniRajinCoding/terpal
 ```
 
-If the repository is private, you need to be invited on GitHub and have GitHub set up on your computer (`gh auth login`, then `gh auth setup-git`).
+</details>
 
-## Choose your pal
+Need the longer version with troubleshooting? It's in [INSTALL.md](INSTALL.md).
 
-Three pets are included. Switch any time:
+## Does it start by itself?
 
-| Command | Pet |
+Yes. Install it once at **user** scope and your pal shows up in every new Claude session. There's nothing to turn on, no setup file, no ritual. Open `claude` and it's there, probably judging you.
+
+It lives in the terminal, above the prompt. If it isn't there, start a fresh session and check `claude plugin list`.
+
+---
+
+## Pick your pal
+
+Three of them, all equally unbothered:
+
+```
+cat                tiny              robot (default)
+(=^･ω･^=)           /\_/\             [o_o]
+                   ( o.o )           /|_|\
+```
+
+Switch any time:
+
+| Type this | Get this |
 |---|---|
-| `/petskin cat` | classic kaomoji cat `(=^･ω･^=)` |
-| `/petskin tiny` | tiny 2-line cat |
-| `/petskin robot` | robot `[o_o]` (default) |
+| `/petskin cat` | the classic cat |
+| `/petskin tiny` | the tiny two-line cat |
+| `/petskin robot` | the robot |
 
-Your choice is remembered across sessions. `/petskin` alone lists the options.
+It remembers your choice, so you only have to pick once.
 
-## How it reacts
+## What it does all day
 
-| What happens | The pet |
+It reacts to what's going on. Roughly:
+
+| What's happening | What your pal does |
 |---|---|
-| Waiting | idle, sometimes looks around |
-| You type (every 300 characters) | perks up |
-| You paste or write a very long prompt (500+ characters) | startled |
-| You delete 500+ characters | teases you about scrapping your ideas |
-| Claude works | busy, with different looks for reading, editing and searching |
-| Claude needs your approval | curious |
-| A turn takes over 2 minutes | impatient |
-| 3 errors in a row | dizzy |
-| A `git commit` or `git push` succeeds | celebrates "shipped!" |
-| A turn finishes | happy |
-| A command fails | sad |
-| 2 minutes of nothing | falls asleep, wakes when you type |
-| Late at night (11pm to 5am) | tells you to go to bed |
+| Nothing | Stands there. Occasionally looks around like it heard something. |
+| You're typing | Perks up every few hundred characters, to show it's paying attention. |
+| You paste a wall of text | Startled. Understandably. |
+| You delete a lot of text | Gently teases you for scrapping your ideas. |
+| Claude is working | Busy, with different faces for reading, editing and searching. |
+| Claude needs your OK | Curious, waiting for you to click the thing. |
+| A turn takes forever | Impatient. Same. |
+| Three errors in a row | Dizzy. Also same. |
+| You commit or push | Celebrates. A little too proud of you. |
+| Claude finishes | Happy. |
+| Something fails | Sad. |
+| You go quiet for 2 minutes | Falls asleep. Typing wakes it up. |
+| It's very late | Suggests you go to bed. You won't. |
 
-Pet it with `/pet`, or feed it with `/pet feed`.
+Only the tiny symbol next to the face moves (a note, a question mark, a `z`). The rest holds still, so it isn't a distraction. Probably.
 
-Only the little accessory next to the face moves (a note, a question mark, `zZ`). The face and speech stay still, so it is not distracting.
+## Play with it
 
-## Turn it off
+```
+/pet          give it a pat
+/pet feed     give it a snack
+```
+
+It says something different each time. No, you can't make it stop saying "nom".
+
+## Is it watching me?
+
+It's a face, not a spy. Here's the full picture:
+
+- It runs only on your computer.
+- It makes no network requests and has no analytics or tracking.
+- It doesn't read your files. It only notices things like "Claude started a task" or "you typed something" to pick a face.
+- The only thing it saves is which pal you chose.
+
+<details>
+<summary>Want to double check?</summary>
+
+The whole thing is one small file: `hooks/register.tsx`. Read it, it's short and has no secrets.
+
+</details>
+
+## Remove it
 
 ```
 claude plugin uninstall codepet
 ```
 
-## Tips
+It won't make a scene. Probably.
 
-- If you do not see the pet after installing, start a new `claude` session.
-- It only draws in the terminal, above the prompt.
+## Fine print
 
-## License
+Free for personal and other noncommercial use, under the [PolyForm Noncommercial License 1.0.0](LICENSE). Install it, share it with friends, tinker with it. Please don't sell it. If you share it, keep the `Required Notice` line in `LICENSE`.
 
-Terpal is free for personal and other noncommercial use, under the [PolyForm Noncommercial License 1.0.0](LICENSE). You can install it, use it, share it with friends and tinker with it. You cannot sell it or use it for commercial purposes. Please keep the `Required Notice` line from `LICENSE` if you share it.
+Made by [ToniRajinCoding](https://github.com/ToniRajinCoding).
