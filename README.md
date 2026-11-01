@@ -12,7 +12,7 @@ A tiny pet that lives above your Claude Code prompt and reacts to what you and C
 In a Claude Code session, type:
 
 ```
-/plugin install codepet --marketplace <github-username>/Terpal
+/plugin install codepet --marketplace ToniRajinCoding/terpal
 ```
 
 Answer `y` to add the marketplace, then choose the **user** scope (so the pet shows up in every session). The pet appears right away.
@@ -20,7 +20,7 @@ Answer `y` to add the marketplace, then choose the **user** scope (so the pet sh
 From a normal shell instead:
 
 ```
-claude plugin install codepet --marketplace <github-username>/Terpal
+claude plugin install codepet --marketplace ToniRajinCoding/terpal
 ```
 
 If the repository is private, you need to be invited on GitHub and have GitHub set up on your computer (`gh auth login`, then `gh auth setup-git`).
@@ -69,3 +69,7 @@ claude plugin uninstall codepet
 
 - If you do not see the pet after installing, start a new `claude` session.
 - It only draws in the terminal, above the prompt.
+
+## License
+
+Terpal is free for personal and other noncommercial use, under the [PolyForm Noncommercial License 1.0.0](LICENSE). You can install it, use it, share it with friends and tinker with it. You cannot sell it or use it for commercial purposes. Please keep the `Required Notice` line from `LICENSE` if you share it.
